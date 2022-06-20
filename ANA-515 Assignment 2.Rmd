@@ -1,0 +1,24 @@
+---
+title: "ANA-515 Assignment 2"
+author: "Shahnawaz Shaik"
+date: '2022-06-20'
+output: html_document
+---
+
+```{r get-data, include = FALSE}
+library(readxl)
+Cheapestelectriccars_EVDatabase <- read_excel("C:\\mydata\\Cheapestelectriccars-EVDatabase.xls")
+newdata <- EVDatabase
+```
+
+#this next line is creating a subset called 'SUV' of the gun_data dataset where the age is equal or greater to 65
+SUV <- newdata %>% 
+  filter(NumberofSeats >= 5)
+summary(SUV)
+
+AllWheel<-filter(Cheapestelectriccars_EVDatabase, Drive=="All Wheel Drive")
+#Let's just see the Name and Acceleration columns
+select(Name,Acceleration)
+#Let's arrange our data, Names of the cars by Range
+arrange(Name, Range)
+```
